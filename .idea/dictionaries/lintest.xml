@@ -2,6 +2,7 @@
   <dictionary name="lintest">
     <words>
       <w>golos</w>
+      <w>jsonrpc</w>
     </words>
   </dictionary>
 </component>

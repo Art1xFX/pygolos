@@ -2,12 +2,14 @@ from websocket import create_connection
 from json import dumps
 from json import loads
 from pygolos.witness_api import WitnessApi
+from pygolos.account_history import AccountHistory
 
 
 class Api:
     def __init__(self, url="wss://ws.golos.io"):
         self.__ws = create_connection(url)
         self._witness = WitnessApi(self)
+        self._account_history = AccountHistory(self)
 
     @property
     def witness(self):
@@ -15,7 +17,7 @@ class Api:
 
     @property
     def account_history(self):
-        pass
+        return self._account_history
 
     def __call(self, api, method, params):
         self.__ws.send(dumps({"method": "call", "jsonrpc": "2.0",
