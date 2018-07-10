@@ -5,7 +5,37 @@ class Tags:
     def __init__(self, api):
         self.__api = api
 
-    def get_trending_tags(self, start_tag: str, limit: int):
+    @staticmethod
+    def __check_types(limit: int,
+                      select_authors: list = [],
+                      select_tags: list = [],
+                      filter_tags: list = [],
+                      truncate_body: int = 0,
+                      start_author: str = None,
+                      start_permlink: str = None,
+                      parent_author: str = None,
+                      parent_permlink: str = None):
+        if not isinstance(limit, int):
+            raise TypeError("limit")
+        if not isinstance(select_authors, list):
+            raise TypeError("select_authors")
+        if not isinstance(select_tags, list):
+            raise TypeError("select_tags")
+        if not isinstance(filter_tags, list):
+            raise TypeError("filter_tags")
+        if not isinstance(truncate_body, int):
+            raise TypeError("truncate_body")
+        if not isinstance(start_author, str):
+            raise TypeError("start_author")
+        if not isinstance(start_permlink, str):
+            raise TypeError("start_permlink")
+        if not isinstance(parent_author, str):
+            raise TypeError("parent_author")
+        if not isinstance(parent_permlink, str):
+            raise TypeError("parent_permlink")
+
+    def get_trending_tags(self,
+                          start_tag: str, limit: int):
         """
         Returns the list of trending tags.
         :param start_tag: trending tag.
@@ -20,7 +50,8 @@ class Tags:
             raise ValueError("limit")
         return self.__api._Api__call("tags", "get_trending_tags", [start_tag, limit])
 
-    def get_tags_used_by_author(self, author: str):
+    def get_tags_used_by_author(self,
+                                author: str):
         """
         Returns a list of tags used by an author.
         :param author: author name.
@@ -53,6 +84,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_payout",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -87,6 +120,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_trending",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -121,6 +156,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_created",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -155,6 +192,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_cashout",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -189,6 +228,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_votes",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -223,6 +264,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_children",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -257,6 +300,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_hot",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -291,6 +336,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_feed",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -325,6 +372,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_blog",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -359,6 +408,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_comments",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -393,6 +444,8 @@ class Tags:
         :param parent_permlink: permlink of parent discussion.
         :return: List of discussions.
         """
+        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
+                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_promoted",
                                      [{"limit": limit,
                                        "select_authors": select_authors,
@@ -404,7 +457,8 @@ class Tags:
                                        "parent_author": parent_author,
                                        "parent_permlink": parent_permlink}])
 
-    def get_discussions_by_author_before_date(self, author: str, start_permlink: str,
+    def get_discussions_by_author_before_date(self,
+                                              author: str, start_permlink: str,
                                               before_date: str, limit: int):
         """
         Returns a list of discussions based on author before date.
@@ -414,6 +468,16 @@ class Tags:
         :param limit: discussions count in response.
         :return: List of discussions.
         """
+        if not isinstance(author, str):
+            raise TypeError("author")
+        if not isinstance(start_permlink, str):
+            raise TypeError("start_permlink")
+        if not isinstance(before_date, str):
+            raise TypeError("before_date")
+        if not isinstance(limit, int):
+            raise TypeError("limit")
+        if not 1 <= limit <= 100:
+            raise ValueError("limit")
         return self.__api._Api__call("tags", "get_discussions_by_author_before_date",
                                      [author, start_permlink, before_date, limit])
 
