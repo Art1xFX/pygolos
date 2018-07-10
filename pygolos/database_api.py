@@ -1,3 +1,6 @@
+import json
+
+
 class DatabaseApi:
     def __init__(self, api):
         self.__api = api
@@ -69,14 +72,14 @@ class DatabaseApi:
         """
         return self.__api._Api__call("database_api", "get_recovery_request", [account])
 
-    def get_escrow(self, after, escrowId:int):
+    def get_escrow(self, after:str, escrowId:int):
         """
         Returns the escrow for a certain account by id.
         :param after:
         :param escrowId:int
         :return:
         """
-        return self.__api._Api__call("database_api", "get_recovery_request", [frm, escrowId])
+        return self.__api._Api__call("database_api", "get_recovery_request", [after, escrowId])
 
     def get_withdraw_routes(self, account, withdrw):
         """
@@ -117,14 +120,28 @@ class DatabaseApi:
     def get_conversion_requests(self, accountName:str):
         """
         Displays current requests for conversion by the specified user.
-        :param accountName:
+        :param accountName:string
         :return:
         """
         return self.__api._Api__call("database_api", "get_conversion_requests", [accountName])
 
-    def get_transaction_hex(self, trx:str):
+    def get_transaction_hex(self,
+                            ref_block_num:int ,
+                            ref_block_prefix:int,
+                            expiration:str,
+                            operations:list,
+                            extesions:list,
+                            signatures:list
+                            ):
         """
         Returns a hexdump of the serialized binary form of a transaction.
+        :param ref_block_num: int
+        :param ref_block_prefix:int
+        :param expiration: date format
+        :param operations: List
+        :param extesions: List
+        :param signatures: List
+        :return:
         :param trx:Serialized hex form
   "trx": {
     "ref_block_num": 0,
@@ -137,13 +154,27 @@ class DatabaseApi:
 }
         :return:
         """
-        return self.__api._Api__call("database_api", "get_transaction_hex", [trx])
+        trx=json.dumps({"trx":{"ref_block_num":ref_block_num,"ref_block_prefix":ref_block_prefix,"expiration":expiration,"operations":operations,"extensions":extesions,"signatures":signatures}})
+        return self.__api._Api__call("database_api", "get_transaction_hex", [json.loads(trx)])
 
-    def get_required_signatures(self, trx:str, availableKeys):
+    def get_required_signatures(self, ref_block_num:int ,
+                            ref_block_prefix:int,
+                            expiration:str,
+                            operations:list,
+                            extesions:list,
+                            signatures:list,
+                            availableKeys:list):
         """
 
         This API will take a partially signed transaction and a set of public keys that the owner has the ability to sign for and return the minimal subset of public keys that should add signatures to the transaction.
-        :param trx:Serialized hex form
+        :param ref_block_num: int
+        :param ref_block_prefix:int
+        :param expiration: date format
+        :param operations: List
+        :param extesions: List
+        :param signatures: List
+        :return:
+        :Serialized hex form
   "trx": {
     "ref_block_num": 0,
     "ref_block_prefix": 0,
@@ -153,14 +184,31 @@ class DatabaseApi:
     "signatures": []
   }
 }
-        :param availableKeys:???
+        :param availableKeys:list
         :return:
         """
-        return self.__api._Api__call("database_api", "get_required_signatures", [trx, availableKeys])
+        trx = json.dumps({"trx": {"ref_block_num": ref_block_num, "ref_block_prefix": ref_block_prefix,
+                                  "expiration": expiration, "operations": operations, "extensions": extesions,
+                                  "signatures": signatures},"available_keys":availableKeys})
 
-    def get_potential_signatures(self, trx):
+        return self.__api._Api__call("database_api", "get_required_signatures", [json.loads(trx), availableKeys])
+
+    def get_potential_signatures(self,
+                            ref_block_num:int ,
+                            ref_block_prefix:int,
+                            expiration:str,
+                            operations:list,
+                            extesions:list,
+                            signatures:list):
         """
         This method will return the set of all public keys that could possibly sign for a given transaction.
+        :param ref_block_num: int
+        :param ref_block_prefix:int
+        :param expiration: date format
+        :param operations: List
+        :param extesions: List
+        :param signatures: List
+        :return:
         :param trx:Serialized
         {
   "trx": {
@@ -174,9 +222,17 @@ class DatabaseApi:
 }
         :return:
         """
-        return self.__api._Api__call("database_api", "get_potential_signatures", [trx])
+        trx = json.dumps({"trx": {"ref_block_num": ref_block_num, "ref_block_prefix": ref_block_prefix,
+                                  "expiration": expiration, "operations": operations, "extensions": extesions,
+                                  "signatures": signatures}})
+        return self.__api._Api__call("database_api", "get_potential_signatures", [json.loads(trx)])
 
-    def verify_authority(self, trx):
+    def verify_authority(self, ref_block_num:int ,
+                            ref_block_prefix:int,
+                            expiration:str,
+                            operations:list,
+                            extesions:list,
+                            signatures:list):
         """
         Returns true if the transaction has all of the required signatures.
         :param trx:Serialized
@@ -192,7 +248,10 @@ class DatabaseApi:
 }
         :return:
         """
-        return self.__api._Api__call("database_api", "verify_authority", [trx])
+        trx = json.dumps({"trx": {"ref_block_num": ref_block_num, "ref_block_prefix": ref_block_prefix,
+                                  "expiration": expiration, "operations": operations, "extensions": extesions,
+                                  "signatures": signatures}})
+        return self.__api._Api__call("database_api", "verify_authority", [json.loads(trx)])
 
     def verify_account_authority(self, name, signers):
         """
@@ -244,10 +303,12 @@ class DatabaseApi:
         :param account:String
         :param after:Time format
         :param limit:int>=0
-        :param tpe:int??
+        :param tpe:int 0,1,2
         :return:
         """
         if limit<0 or limit>10:
+            raise TypeError
+        if tpe<0 or tpe>2:
             raise TypeError
         return self.__api._Api__call("database_api", "get_vesting_delegations", [account, after, limit, tpe])
 
