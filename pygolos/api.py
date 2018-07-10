@@ -10,6 +10,7 @@ from pygolos.account_by_key import AccountByKey
 from pygolos.database_api import DatabaseApi
 from pygolos.follow_api import FollowApi
 from pygolos.network_broadcast_api import NetworkBroadcastApi
+from pygolos.market_history_api import MarketHistoryApi
 
 
 class Api:
@@ -24,6 +25,7 @@ class Api:
         self.__database_api = DatabaseApi(self)
         self.__follow_api = FollowApi(self)
         self.__network_broadcast_api = NetworkBroadcastApi(self)
+        self.__market_history=MarketHistoryApi(self)
 
     @property
     def witness(self):
@@ -40,7 +42,7 @@ class Api:
     @property
     def tags(self):
         return self.__tags
-
+    
     @property
     def social_network(self):
         return self.__social_network
@@ -60,6 +62,10 @@ class Api:
     @property
     def network_broadcast_api(self):
         return self.__network_broadcast_api
+
+    @property
+    def market_history(self):
+        return self.__market_history
 
     def __call(self, api, method, params):
         self.__ws.send(dumps({"method": "call", "jsonrpc": "2.0",
