@@ -4,6 +4,7 @@ from json import loads
 
 from pygolos.database_api import DatabaseApi
 from pygolos.follow_api import FollowApi
+from pygolos.market_history_api import MarketHistoryApi
 from pygolos.witness_api import WitnessApi
 
 
@@ -13,6 +14,7 @@ class Api:
         self._witness = WitnessApi(self)
         self._database=DatabaseApi(self)
         self._follow=FollowApi(self)
+        self._market=MarketHistoryApi(self)
 
     @property
     def witness(self):
@@ -29,6 +31,9 @@ class Api:
     @property
     def account_history(self):
         pass
+    @property
+    def market_history(self):
+        return self._market
 
     def __call(self, api, method, params):
         self.__ws.send(dumps({"method": "call", "jsonrpc": "2.0",
