@@ -7,6 +7,8 @@ from pygolos.operation_history import OperationHistory
 from pygolos.tags import Tags
 from pygolos.social_network import SocialNetwork
 from pygolos.account_by_key import AccountByKey
+from pygolos.database_api import DatabaseApi
+from pygolos.follow_api import FollowApi
 from pygolos.network_broadcast_api import NetworkBroadcastApi
 
 
@@ -19,6 +21,8 @@ class Api:
         self.__tags = Tags(self)
         self.__social_network = SocialNetwork(self)
         self.__account_by_key = AccountByKey(self)
+        self.__database_api = DatabaseApi(self)
+        self.__follow_api = FollowApi(self)
         self.__network_broadcast_api = NetworkBroadcastApi(self)
 
     @property
@@ -44,6 +48,10 @@ class Api:
     @property
     def account_by_key(self):
         return self.__account_by_key
+
+    @property
+    def database_api(self):
+        return self.__database_api
 
     @property
     def follow_api(self):
