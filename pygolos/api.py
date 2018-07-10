@@ -4,6 +4,7 @@ from json import loads
 from pygolos.witness_api import WitnessApi
 from pygolos.account_history import AccountHistory
 from pygolos.operation_history import OperationHistory
+from pygolos.tags import Tags
 
 
 class Api:
@@ -12,6 +13,7 @@ class Api:
         self.__witness = WitnessApi(self)
         self.__account_history = AccountHistory(self)
         self.__operation_history = OperationHistory(self)
+        self.__tags = Tags(self)
 
     @property
     def witness(self):
@@ -24,6 +26,10 @@ class Api:
     @property
     def operation_history(self):
         return self.__operation_history
+
+    @property
+    def tags(self):
+        return self.__tags
 
     def __call(self, api, method, params):
         self.__ws.send(dumps({"method": "call", "jsonrpc": "2.0",
