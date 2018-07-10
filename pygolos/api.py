@@ -5,6 +5,7 @@ from pygolos.witness_api import WitnessApi
 from pygolos.account_history import AccountHistory
 from pygolos.operation_history import OperationHistory
 from pygolos.tags import Tags
+from pygolos.social_network import SocialNetwork
 
 
 class Api:
@@ -14,6 +15,7 @@ class Api:
         self.__account_history = AccountHistory(self)
         self.__operation_history = OperationHistory(self)
         self.__tags = Tags(self)
+        self.__social_network = SocialNetwork(self)
 
     @property
     def witness(self):
@@ -30,6 +32,10 @@ class Api:
     @property
     def tags(self):
         return self.__tags
+
+    @property
+    def social_network(self):
+        return self.__social_network
 
     def __call(self, api, method, params):
         self.__ws.send(dumps({"method": "call", "jsonrpc": "2.0",
