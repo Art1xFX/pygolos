@@ -47,7 +47,7 @@ class WitnessApi:
         """
         if not isinstance(account, str):
             raise TypeError("account")
-        return self.__api._Api__call("witnnvalid hex charaess_api", "get_witness_by_account", [account])
+        return self.__api._Api__call("witness_api", "get_witness_by_account", [account])
 
     def get_witnesses_by_vote(self, start_name: str, limit: int):
         """
