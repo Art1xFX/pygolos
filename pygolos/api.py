@@ -7,6 +7,8 @@ from pygolos.operation_history import OperationHistory
 from pygolos.tags import Tags
 from pygolos.social_network import SocialNetwork
 from pygolos.account_by_key import AccountByKey
+from pygolos.network_broadcast_api import NetworkBroadcastApi
+
 
 class Api:
     def __init__(self, url="wss://ws.golos.io"):
@@ -17,6 +19,7 @@ class Api:
         self.__tags = Tags(self)
         self.__social_network = SocialNetwork(self)
         self.__account_by_key = AccountByKey(self)
+        self.__network_broadcast_api = NetworkBroadcastApi(self)
 
     @property
     def witness(self):
@@ -41,6 +44,14 @@ class Api:
     @property
     def account_by_key(self):
         return self.__account_by_key
+
+    @property
+    def follow_api(self):
+        return self.__follow_api
+
+    @property
+    def network_broadcast_api(self):
+        return self.__network_broadcast_api
 
     def __call(self, api, method, params):
         self.__ws.send(dumps({"method": "call", "jsonrpc": "2.0",
