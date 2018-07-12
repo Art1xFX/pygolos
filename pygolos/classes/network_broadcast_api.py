@@ -6,80 +6,34 @@ class NetworkBroadcastApi:
         self.__api = api
 
     def broadcast_transaction(self,
-                              ref_block_num: int,
-                              ref_block_prefix,
-                              expiration: str,
-                              operations: list,
-                              extensions: list,
-                              signatures: list):
+                              transaction):
         """
         Used to broadcast a transaction.
-        :param ref_block_num: number of the previous block.
-        :param ref_block_prefix: last 4 bytes of block id.
-        :param expiration: expiration time of transaction.
-        :param operations: operations in block.
-        :param signatures: signatures of block.
+        :param transaction: transaction to broadcast.
         :return:
         """
         return self.__api._Api__call("network_broadcast_api", "broadcast_transaction",
-                                     [{"trx": {
-                                         "ref_block_num": ref_block_num,
-                                         "ref_block_prefix": ref_block_prefix,
-                                         "expiration": expiration,
-                                         "operations": operations,
-                                         "extensions": extensions,
-                                         "signatures": signatures}}])
+                                     [transaction])
 
     def broadcast_transaction_with_callback(self,
-                                            confirmation_callback,
-                                            ref_block_num: int,
-                                            ref_block_prefix,
-                                            expiration: str,
-                                            operations: list,
-                                            extensions: list,
-                                            signatures: list):
+                                            transaction):
         """
         Used to broadcast a transaction.
-        :param ref_block_num: number of the previous block.
-        :param ref_block_prefix: last 4 bytes of block id.
-        :param expiration: expiration time of transaction.
-        :param operations: operations in block.
-        :param signatures: signatures of block.
+        :param transaction: transaction to broadcast.
         :return:
         """
         return self.__api._Api__call("network_broadcast_api", "broadcast_transaction_with_callback",
-                                     [confirmation_callback, {"trx": {
-                                         "ref_block_num": ref_block_num,
-                                         "ref_block_prefix": ref_block_prefix,
-                                         "expiration": expiration,
-                                         "operations": operations,
-                                         "extensions": extensions,
-                                         "signatures": signatures}}])
+                                     [transaction])
 
     def broadcast_transaction_synchronous(self,
-                                          ref_block_num: int,
-                                          ref_block_prefix,
-                                          expiration: str,
-                                          operations: list,
-                                          extensions: list,
-                                          signatures: list):
+                                          transaction):
         """
         Used to broadcast a transaction and waits for it to be processed synchronously.
-        :param ref_block_num: number of the previous block.
-        :param ref_block_prefix: last 4 bytes of block id.
-        :param expiration: expiration time of transaction.
-        :param operations: operations in block.
-        :param signatures: signatures of block.
+        :param transaction: transaction to broadcast.
         :return:
         """
         return self.__api._Api__call("network_broadcast_api", "broadcast_transaction_synchronous",
-                                     [{"trx": {
-                                         "ref_block_num": ref_block_num,
-                                         "ref_block_prefix": ref_block_prefix,
-                                         "expiration": expiration,
-                                         "operations": operations,
-                                         "extensions": extensions,
-                                         "signatures": signatures}}])
+                                     [transaction])
 
     def broadcast_block(self,
                         previous: str,
@@ -97,18 +51,3 @@ class NetworkBroadcastApi:
                                        "extensions": extensions,
                                        "witness_signature": witness_signature,
                                        "transactions": transactions}])
-
-    def broadcast_transaction_synchronous2(self,
-                                          trx):
-        """
-        Used to broadcast a transaction and waits for it to be processed synchronously.
-        :param ref_block_num: number of the previous block.
-        :param ref_block_prefix: last 4 bytes of block id.
-        :param expiration: expiration time of transaction.
-        :param operations: operations in block.
-        :param signatures: signatures of block.
-        :return:
-        """
-        from json import loads
-        return self.__api._Api__call("network_broadcast_api", "broadcast_transaction_synchronous",
-                                     [loads(trx.jsonify())])

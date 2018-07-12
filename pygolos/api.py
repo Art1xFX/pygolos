@@ -21,6 +21,8 @@ class Api:
         self.__network_broadcast_api = network_broadcast_api.NetworkBroadcastApi(self)
         self.__market_history = market_history_api.MarketHistoryApi(self)
 
+    chain_id = "782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12"
+
     @property
     def witness(self):
         return self.__witness
@@ -62,6 +64,9 @@ class Api:
         return self.__market_history
 
     def __call(self, api, method, params):
+        _params = [loads(p.jsonify()) if hasattr(p, "jsonify") else p for p in params]
         self.__ws.send(dumps({"method": "call", "jsonrpc": "2.0",
-                              "params": [api, method, params]}))
+                              "params": [api, method, _params]}))
+        print(dumps({"method": "call", "jsonrpc": "2.0",
+                              "params": [api, method, _params]}))
         return loads(self.__ws.recv())
