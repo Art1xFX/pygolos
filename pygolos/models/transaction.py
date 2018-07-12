@@ -12,7 +12,7 @@ from pygolos.api import Api
 
 import varint
 
-_operations = {"vote": b"\0", "comment": b"1"}
+_operations = {"vote": b"\0", "comment": b"\1"}
 
 class Transaction:
     def __init__(self,
