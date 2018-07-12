@@ -1,6 +1,6 @@
 class SocialNetwork:
     """
-    Provides GOLOS social_network api.
+    Provides GOLOS social_network classes.
     """
     def __init__(self, api):
         self.__api = api

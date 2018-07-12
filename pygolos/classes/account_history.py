@@ -1,6 +1,6 @@
 class AccountHistory:
     """
-    Provides GOLOS account_history api.
+    Provides GOLOS account_history classes.
     """
     def __init__(self, api):
         self.__api = api

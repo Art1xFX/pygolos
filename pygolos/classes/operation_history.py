@@ -1,6 +1,6 @@
 class OperationHistory:
     """
-    Provides GOLOS operation_history api.
+    Provides GOLOS operation_history classes.
     """
     def __init__(self, api):
         self.__api = api

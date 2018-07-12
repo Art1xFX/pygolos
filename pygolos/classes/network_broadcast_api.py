@@ -1,6 +1,6 @@
 class NetworkBroadcastApi:
     """
-    Provides GOLOS network_broadcast_api api.
+    Provides GOLOS network_broadcast_api classes.
     """
     def __init__(self, api):
         self.__api = api
@@ -97,3 +97,18 @@ class NetworkBroadcastApi:
                                        "extensions": extensions,
                                        "witness_signature": witness_signature,
                                        "transactions": transactions}])
+
+    def broadcast_transaction_synchronous2(self,
+                                          trx):
+        """
+        Used to broadcast a transaction and waits for it to be processed synchronously.
+        :param ref_block_num: number of the previous block.
+        :param ref_block_prefix: last 4 bytes of block id.
+        :param expiration: expiration time of transaction.
+        :param operations: operations in block.
+        :param signatures: signatures of block.
+        :return:
+        """
+        from json import loads
+        return self.__api._Api__call("network_broadcast_api", "broadcast_transaction_synchronous",
+                                     [loads(trx.jsonify())])

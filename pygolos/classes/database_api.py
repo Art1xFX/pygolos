@@ -253,7 +253,7 @@ class DatabaseApi:
                                   "signatures": signatures}})
         return self.__api._Api__call("database_api", "verify_authority", [json.loads(trx)])
 
-    def verify_account_authority(self, name, signers):
+    def verify_account_authority(self, name, signers: list):
         """
         Not implemented
         :param name: String ??

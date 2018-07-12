@@ -1,6 +1,6 @@
 class AccountByKey:
     """
-    Provides GOLOS account_by_key api.
+    Provides GOLOS account_by_key classes.
     """
     def __init__(self, api):
         self.__api = api

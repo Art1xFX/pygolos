@@ -1,6 +1,6 @@
 class Tags:
     """
-    Provides GOLOS tags api.
+    Provides GOLOS tags classes.
     """
     def __init__(self, api):
         self.__api = api
