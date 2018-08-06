@@ -48,12 +48,31 @@ class ApiHelper:
                                                title=title,
                                                body=body,
                                                json_metadata=json_metadata)
-        t = datetime.datetime.utcnow() + datetime.timedelta(seconds=4)
+        t = datetime.datetime.utcnow() + datetime.timedelta(seconds=30)
         trx = Transaction(ref_block_num=dgp["head_block_number"] & 0xFFFF,
                           ref_block_prefix=struct.unpack_from("<I", unhexlify(dgp["head_block_id"]), 4)[0],
                           expiration=t.strftime("%Y-%m-%dT%H:%M:%S%Z"),
                           operations=[op])
         trx.sign([key])
+        return self.__api.network_broadcast_api.broadcast_transaction_synchronous(trx)
+
+    def collection(self,
+                   key,
+                   author: str=str(),
+                   permlink: str=str(),
+                   title: str=str()):
+        dgp = self.__api.database_api.get_dynamic_global_properties()["result"]
+        op = pygolos.models.operations.Collection(author=author,
+                                                  permlink=permlink,
+                                                  title=title)
+        t = datetime.datetime.utcnow() + datetime.timedelta(seconds=30)
+        trx = Transaction(ref_block_num=dgp["head_block_number"] & 0xFFFF,
+                          ref_block_prefix=struct.unpack_from("<I", unhexlify(dgp["head_block_id"]), 4)[0],
+                          expiration=t.strftime("%Y-%m-%dT%H:%M:%S%Z"),
+                          operations=[op])
+        trx.sign([key])
+        print(trx.binarify())
+        print(hexlify(trx.binarify()))
         return self.__api.network_broadcast_api.broadcast_transaction_synchronous(trx)
 
     def comment(self,

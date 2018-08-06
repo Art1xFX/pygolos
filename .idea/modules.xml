@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../golosDemo/.idea/golosDemo.iml" filepath="$PROJECT_DIR$/../golosDemo/.idea/golosDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pygolos.iml" filepath="$PROJECT_DIR$/.idea/pygolos.iml" />
+    </modules>
+  </component>
+</project>

@@ -6,6 +6,7 @@ from pygolos.classes import database_api, network_broadcast_api, tags, account_b
 
 
 class Api:
+
     def __init__(self, url="wss://ws.golos.io", chain_id: str="782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12"):
         self.__ws = create_connection(url)
         self.url = url

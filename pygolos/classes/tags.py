@@ -1,3 +1,4 @@
+
 class Tags:
     """
     Provides GOLOS tags classes.
@@ -98,40 +99,14 @@ class Tags:
                                        "parent_permlink": parent_permlink}])
 
     def get_discussions_by_trending(self,
-                                    limit: int,
-                                    select_authors: list=[],
-                                    select_tags: list=[],
-                                    filter_tags: list = [],
-                                    truncate_body: int=0,
-                                    start_author: str=None,
-                                    start_permlink: str=None,
-                                    parent_author: str=None,
-                                    parent_permlink: str=None):
+                                    query):
         """
         Returns a list of discussions by trending.
-        :param limit: discussions count in response.
-        :param select_authors: authors names.
-        :param select_tags: tags list, discussions WITHOUT these tags will filtered.
-        :param filter_tags: tags list, discussions WITH these tags will filtered.
-        :param truncate_body: length in bytes of response body.
-        :param start_author: author name to start with.
-        :param start_permlink: permlink to start with.
-        :param parent_author: author of parent discussion.
-        :param parent_permlink: permlink of parent discussion.
+        :param query: pygolos.models.Query.
         :return: List of discussions.
         """
-        Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
-                           start_author, start_permlink, parent_author, parent_permlink)
         return self.__api._Api__call("tags", "get_discussions_by_trending",
-                                     [{"limit": limit,
-                                       "select_authors": select_authors,
-                                       "select_tags": select_tags,
-                                       "filter_tags": filter_tags,
-                                       "truncate_body": truncate_body,
-                                       "start_author": start_author,
-                                       "start_permlink": start_permlink,
-                                       "parent_author": parent_author,
-                                       "parent_permlink": parent_permlink}])
+                                     [query])
 
     def get_discussions_by_created(self,
                                    limit: int,
@@ -139,21 +114,13 @@ class Tags:
                                    select_tags: list=[],
                                    filter_tags: list = [],
                                    truncate_body: int=0,
-                                   start_author: str=None,
-                                   start_permlink: str=None,
-                                   parent_author: str=None,
-                                   parent_permlink: str=None):
+                                   start_author: str="",
+                                   start_permlink: str="",
+                                   parent_author: str="",
+                                   parent_permlink: str=""):
         """
         Returns a list of discussions by created.
-        :param limit: discussions count in response.
-        :param select_authors: authors names.
-        :param select_tags: tags list, discussions WITHOUT these tags will filtered.
-        :param filter_tags: tags list, discussions WITH these tags will filtered.
-        :param truncate_body: length in bytes of response body.
-        :param start_author: author name to start with.
-        :param start_permlink: permlink to start with.
-        :param parent_author: author of parent discussion.
-        :param parent_permlink: permlink of parent discussion.
+        :param query: pygolos.models.Query.
         :return: List of discussions.
         """
         Tags.__check_types(limit, select_authors, select_tags, filter_tags, truncate_body,
@@ -211,10 +178,10 @@ class Tags:
                                  select_tags: list=[],
                                  filter_tags: list = [],
                                  truncate_body: int=0,
-                                 start_author: str=None,
-                                 start_permlink: str=None,
-                                 parent_author: str=None,
-                                 parent_permlink: str=None):
+                                 start_author: str="",
+                                 start_permlink: str="",
+                                 parent_author: str="",
+                                 parent_permlink: str=""):
         """
         Returns a list of discussions by votes.
         :param limit: discussions count in response.
@@ -283,10 +250,10 @@ class Tags:
                                select_tags: list=[],
                                filter_tags: list = [],
                                truncate_body: int=0,
-                               start_author: str=None,
-                               start_permlink: str=None,
-                               parent_author: str=None,
-                               parent_permlink: str=None):
+                               start_author: str="",
+                               start_permlink: str="",
+                               parent_author: str="",
+                               parent_permlink: str=""):
         """
         Returns a list of discussions by hot.
         :param limit: discussions count in response.
@@ -427,10 +394,10 @@ class Tags:
                                     select_tags: list = [],
                                     filter_tags: list = [],
                                     truncate_body: int = 0,
-                                    start_author: str = None,
-                                    start_permlink: str = None,
-                                    parent_author: str = None,
-                                    parent_permlink: str = None):
+                                    start_author: str = "",
+                                    start_permlink: str = "",
+                                    parent_author: str = "",
+                                    parent_permlink: str = ""):
         """
         Returns a list of discussions by promoted.
         :param limit: discussions count in response.
