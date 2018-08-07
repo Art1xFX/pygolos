@@ -99,3 +99,20 @@ class ApiHelper:
                           operations=[op])
         trx.sign([key])
         return self.__api.network_broadcast_api.broadcast_transaction_synchronous(trx)
+
+    def rate(self,
+                key,
+                author: str,
+                permlink: str,
+                value: int):
+        dgp = self.__api.database_api.get_dynamic_global_properties()["result"]
+        op = pygolos.models.operations.Rate(author=author,
+                                            permlink=permlink,
+                                            value=value)
+        t = datetime.datetime.utcnow() + datetime.timedelta(seconds=10)
+        trx = Transaction(ref_block_num=dgp["head_block_number"] & 0xFFFF,
+                          ref_block_prefix=struct.unpack_from("<I", unhexlify(dgp["head_block_id"]), 4)[0],
+                          expiration=t.strftime("%Y-%m-%dT%H:%M:%S%Z"),
+                          operations=[op])
+        trx.sign([key])
+        return self.__api.network_broadcast_api.broadcast_transaction_synchronous(trx)

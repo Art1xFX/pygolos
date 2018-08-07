@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30dbffcf-0d61-475e-b78a-d5978f0695cf" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pygolos/models/operations/collection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pygolos/models/query.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pygolos/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygolos/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pygolos/classes/collection_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pygolos/models/operations/rate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pygolos/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygolos/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pygolos/api_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygolos/api_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pygolos/classes/tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygolos/classes/tags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pygolos/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygolos/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygolos/classes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygolos/classes/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pygolos/models/operations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygolos/models/operations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pygolos/models/transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygolos/models/transaction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +24,8 @@
       <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pygolos/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
+            <state relative-caret-position="384">
+              <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -33,11 +33,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database_api.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pygolos/classes/database_api.py">
+      <file leaf-file-name="rate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pygolos/models/operations/rate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+            <state relative-caret-position="300">
+              <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vote.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pygolos/models/operations/vote.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -45,8 +57,8 @@
       <file leaf-file-name="api_helper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pygolos/api_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="73" column="28" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+            <state relative-caret-position="194">
+              <caret line="98" column="42" lean-forward="true" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -57,20 +69,11 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+            <state relative-caret-position="360">
+              <caret line="24" column="74" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="social_network.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pygolos/classes/social_network.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1485">
-              <caret line="99" column="56" selection-start-line="99" selection-start-column="20" selection-end-line="100" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -79,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/pygolos/models/operations/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -87,11 +90,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="collection_api.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pygolos/classes/collection_api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="collection.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pygolos/models/operations/collection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="255">
+              <caret line="20" column="25" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -99,29 +111,11 @@
       <file leaf-file-name="transaction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pygolos/models/transaction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
+            <state relative-caret-position="315">
+              <caret line="33" column="47" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="47" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="query.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pygolos/models/query.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tags.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pygolos/classes/tags.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2130">
-              <caret line="142" column="58" selection-start-line="142" selection-start-column="58" selection-end-line="142" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -183,7 +177,6 @@
         <option value="$PROJECT_DIR$/pygolos/social_network.py" />
         <option value="$PROJECT_DIR$/pygolos/account_by_key.py" />
         <option value="$PROJECT_DIR$/pygolos/network_broadcast_api.py" />
-        <option value="$PROJECT_DIR$/pygolos/classes/__init__.py" />
         <option value="$PROJECT_DIR$/pygolos/models/operation.py" />
         <option value="$PROJECT_DIR$/../golosDemo/main.py" />
         <option value="$PROJECT_DIR$/pygolos/models/operations/vote.py" />
@@ -196,15 +189,18 @@
         <option value="$PROJECT_DIR$/pygolos/utils/base58.py" />
         <option value="$PROJECT_DIR$/pygolos/classes/network_broadcast_api.py" />
         <option value="$PROJECT_DIR$/pygolos/models/operations/comment.py" />
-        <option value="$PROJECT_DIR$/pygolos/api.py" />
         <option value="$PROJECT_DIR$/pygolos/__init__.py" />
         <option value="$PROJECT_DIR$/pygolos/models/__init__.py" />
         <option value="$PROJECT_DIR$/pygolos/models/query.py" />
         <option value="$PROJECT_DIR$/pygolos/classes/tags.py" />
         <option value="$PROJECT_DIR$/pygolos/models/operations/collection.py" />
-        <option value="$PROJECT_DIR$/pygolos/models/operations/__init__.py" />
-        <option value="$PROJECT_DIR$/pygolos/api_helper.py" />
+        <option value="$PROJECT_DIR$/pygolos/classes/__init__.py" />
         <option value="$PROJECT_DIR$/pygolos/models/transaction.py" />
+        <option value="$PROJECT_DIR$/pygolos/api_helper.py" />
+        <option value="$PROJECT_DIR$/pygolos/api.py" />
+        <option value="$PROJECT_DIR$/pygolos/models/operations/__init__.py" />
+        <option value="$PROJECT_DIR$/pygolos/classes/collection_api.py" />
+        <option value="$PROJECT_DIR$/pygolos/models/operations/rate.py" />
         <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
@@ -465,11 +461,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="31" width="1286" height="947" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5015625" side_tool="true" weight="0.33906633" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4984375" weight="0.33906633" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4984375" visible="true" weight="0.33906633" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4984375" weight="0.3280098" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
@@ -541,11 +538,6 @@
           <line>29</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pygolos/models/transaction.py</url>
-          <line>38</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -554,30 +546,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pygolos/classes/tags.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="90" column="72" lean-forward="true" selection-start-line="90" selection-start-column="72" selection-end-line="90" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygolos/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygolos/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pygolos/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -738,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pygolos/classes/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pygolos/helpers/__init.py" />
     <entry file="file://$PROJECT_DIR$/pygolos/helpers/private_key" />
     <entry file="file://$PROJECT_DIR$/pygolos/helpers/private_key.py" />
@@ -752,13 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygolos/models/operations/vote.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -828,13 +786,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pygolos/models/operations/__init__.py">
+    <entry file="file://$PROJECT_DIR$/pygolos/classes/social_network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1485">
+          <caret line="99" column="56" selection-start-line="99" selection-start-column="20" selection-end-line="100" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pygolos/classes/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -845,54 +807,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pygolos/classes/follow_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="46" column="11" lean-forward="true" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pygolos/models/transaction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
+        <state relative-caret-position="315">
+          <caret line="33" column="47" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="47" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pygolos/models/operations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pygolos/models/operations/collection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygolos/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pygolos/classes/social_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="99" column="56" selection-start-line="99" selection-start-column="20" selection-end-line="100" selection-end-column="68" />
+        <state relative-caret-position="255">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pygolos/api_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="73" column="28" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+        <state relative-caret-position="194">
+          <caret line="98" column="42" lean-forward="true" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pygolos/classes/collection_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pygolos/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pygolos/models/operations/rate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pygolos/models/operations/vote.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        <state relative-caret-position="360">
+          <caret line="24" column="74" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

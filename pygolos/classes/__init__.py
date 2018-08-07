@@ -8,3 +8,4 @@ from .tags import Tags
 from .operation_history import OperationHistory
 from .account_history import AccountHistory
 from .witness_api import WitnessApi
+from .collection_api import CollectionApi
