@@ -9,3 +9,9 @@ class CollectionApi:
 
     def get_collection_marks(self, permlink: str):
         return self.__api._Api__call("collection_api", "get_collection_marks", [permlink])
+
+    def get_investments_by_investor(self, investor: str):
+        return self.__api._Api__call("collection_api", "get_investments_by_investor", [investor])
+
+    def get_investments_by_collection(self, permlink: str):
+        return self.__api._Api__call("collection_api", "get_investments_by_collection", [permlink])

@@ -35,3 +35,6 @@ class Comment():
 
     def jsonify(self):
         return json.dumps(self.__dict__)
+
+    def __str__(self):
+        return "comment"

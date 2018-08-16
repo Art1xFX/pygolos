@@ -12,7 +12,7 @@ from pygolos.api import Api
 
 import varint
 
-_operations = {"vote": b"\0", "comment": b"\1", "collection": b"\x3c", "rate": b"\x3d"}
+_operations = {"vote": b"\0", "comment": b"\1", "collectioncreate": b"\x3c", "rate": b"\x3d", "invest": b"\x3e", "sell": b"\x3f", "cancel": b"\x40", "buy": b"\x41"}
 
 class Transaction:
     def __init__(self,
@@ -36,14 +36,14 @@ class Transaction:
         for op in self.operations:
             buffer += _operations[op.__class__.__name__.lower()]
             buffer += op.binarify()
-            print(_operations[op.__class__.__name__.lower()])
+            # print(_operations[op.__class__.__name__.lower()])
         buffer += bytes(varint.encode(len(self.extensions)))
         return buffer
 
 
     def jsonify(self):
         obj = self.__dict__.copy()
-        obj["operations"] = [[operation.__class__.__name__.lower(), operation.__dict__] for operation in self.operations]
+        obj["operations"] = [[operation.__str__(), operation.__dict__] for operation in self.operations]
         return dumps(obj)
 
     def sign(self, keys: list):

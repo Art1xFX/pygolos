@@ -9,3 +9,7 @@ from .operation_history import OperationHistory
 from .account_history import AccountHistory
 from .witness_api import WitnessApi
 from .collection_api import CollectionApi
+from .market_place_api import MarketPlaceApi
+
+__all__ = [DatabaseApi, MarketHistoryApi, NetworkBroadcastApi, FollowApi, AccountByKey, SocialNetwork,
+           Tags, OperationHistory, AccountHistory, WitnessApi, CollectionApi, MarketPlaceApi]

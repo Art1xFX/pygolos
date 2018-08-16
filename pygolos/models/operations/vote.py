@@ -22,3 +22,6 @@ class Vote():
 
     def jsonify(self):
         return ""
+
+    def __str__(self):
+        return "vote"

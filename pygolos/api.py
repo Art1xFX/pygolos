@@ -2,7 +2,7 @@ from websocket import create_connection
 from json import dumps
 from json import loads
 from pygolos.classes import database_api, network_broadcast_api, tags, account_by_key, account_history, follow_api, \
-    operation_history, social_network, witness_api, market_history_api, collection_api
+    operation_history, social_network, witness_api, market_history_api, collection_api, market_place_api
 
 
 class Api:
@@ -22,6 +22,7 @@ class Api:
         self.__network_broadcast_api = network_broadcast_api.NetworkBroadcastApi(self)
         self.__market_history = market_history_api.MarketHistoryApi(self)
         self.__collection_api = collection_api.CollectionApi(self)
+        self.__market_place_api = market_place_api.MarketPlaceApi(self)
 
     chain_id = "782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12"
 
@@ -69,11 +70,12 @@ class Api:
     def collection_api(self):
         return self.__collection_api
 
+    @property
+    def market_place_api(self):
+        return self.__market_place_api
 
     def __call(self, api, method, params):
         _params = [loads(p.jsonify()) if hasattr(p, "jsonify") else p for p in params]
         self.__ws.send(dumps({"method": "call", "jsonrpc": "2.0",
                               "params": [api, method, _params]}))
-        #print(dumps({"method": "call", "jsonrpc": "2.0",
-        #                      "params": [api, method, _params]}))
         return loads(self.__ws.recv())
